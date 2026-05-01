@@ -1,0 +1,591 @@
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='AfrikDoc'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-04-30 20:59:46.919219', '2026-04-30 20:59:46.919222') RETURNING "key" /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+Migrating to CreateDoctors (20260430205156)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "specialty" varchar, "zip_code" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260430205156') RETURNING "version" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+Migrating to CreatePatients (20260430205205)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "patients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260430205205') RETURNING "version" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+Migrating to CreateAppointments (20260430205212)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260430205212') RETURNING "version" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Create (1.0ms)[0m  [1m[32mINSERT INTO "doctors" ("first_name", "last_name", "specialty", "zip_code", "created_at", "updated_at") VALUES ('Mamadou', NULL, NULL, NULL, '2026-04-30 21:11:51.282408', '2026-04-30 21:11:51.282408') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (0.9ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at") VALUES ('Jean', NULL, '2026-04-30 21:12:35.886776', '2026-04-30 21:12:35.886776') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+Reverting CreateAppointments (20260430205212)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE "appointments" /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20260430205212' /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+Migrating to CreateAppointments (20260430205212)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" datetime(6), "doctor_id" integer, "patient_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_appointments_on_doctor_id" ON "appointments" ("doctor_id") /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_appointments_on_patient_id" ON "appointments" ("patient_id") /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260430205212') RETURNING "version" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Create (0.7ms)[0m  [1m[32mINSERT INTO "doctors" ("first_name", "last_name", "specialty", "zip_code", "created_at", "updated_at") VALUES ('Mamadou', NULL, NULL, NULL, '2026-04-30 21:22:31.184274', '2026-04-30 21:22:31.184274') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (0.4ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at") VALUES ('Jean', NULL, '2026-04-30 21:22:31.193635', '2026-04-30 21:22:31.193635') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Create (0.4ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "doctor_id", "patient_id", "created_at", "updated_at") VALUES ('2026-04-30 21:22:31.200248', 2, 2, '2026-04-30 21:22:31.210667', '2026-04-30 21:22:31.210667') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='AfrikDoc'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (0) /*application='AfrikDoc'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-04-30 21:25:26.035204', '2026-04-30 21:25:26.035206') RETURNING "key" /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '535538fd578365489e1ea4aefe64b8d17b3e5c65', '2026-04-30 21:25:26.038238', '2026-04-30 21:25:26.038239') RETURNING "key" /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+Migrating to CreateDoctors (20260430205156)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "specialty" varchar, "zip_code" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260430205156') RETURNING "version" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+Migrating to CreatePatients (20260430205205)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "patients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260430205205') RETURNING "version" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+Migrating to CreateAppointments (20260430205212)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" datetime(6), "doctor_id" integer, "patient_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_appointments_on_doctor_id" ON "appointments" ("doctor_id") /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_appointments_on_patient_id" ON "appointments" ("patient_id") /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260430205212') RETURNING "version" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Create (0.9ms)[0m  [1m[32mINSERT INTO "doctors" ("first_name", "last_name", "specialty", "zip_code", "created_at", "updated_at") VALUES ('Mamadou', NULL, NULL, NULL, '2026-04-30 21:26:57.334981', '2026-04-30 21:26:57.334981') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (0.3ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at") VALUES ('Jean', NULL, '2026-04-30 21:26:57.343577', '2026-04-30 21:26:57.343577') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Create (0.9ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "doctor_id", "patient_id", "created_at", "updated_at") VALUES ('2026-04-30 21:26:57.348804', 1, 1, '2026-04-30 21:26:57.357247', '2026-04-30 21:26:57.357247') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+Migrating to CreateCities (20260430213023)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "cities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260430213023') RETURNING "version" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+Migrating to AddCityToDoctors (20260430213326)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='AfrikDoc'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adoctors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "specialty" varchar, "zip_code" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='AfrikDoc'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "adoctors" ("id","first_name","last_name","specialty","zip_code","created_at","updated_at")
+                     SELECT "id","first_name","last_name","specialty","zip_code","created_at","updated_at" FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "doctors" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "specialty" varchar, "zip_code" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "city_id" integer NOT NULL) /*application='AfrikDoc'*/[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "doctors" ("id","first_name","last_name","specialty","zip_code","created_at","updated_at")
+                     SELECT "id","first_name","last_name","specialty","zip_code","created_at","updated_at" FROM "adoctors" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+Migrating to AddCityToDoctors (20260430213326)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='AfrikDoc'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adoctors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "specialty" varchar, "zip_code" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='AfrikDoc'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "adoctors" ("id","first_name","last_name","specialty","zip_code","created_at","updated_at")
+                     SELECT "id","first_name","last_name","specialty","zip_code","created_at","updated_at" FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "doctors" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "specialty" varchar, "zip_code" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "city_id" integer NOT NULL) /*application='AfrikDoc'*/[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "doctors" ("id","first_name","last_name","specialty","zip_code","created_at","updated_at")
+                     SELECT "id","first_name","last_name","specialty","zip_code","created_at","updated_at" FROM "adoctors" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+Migrating to AddCityToDoctors (20260430213326)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "doctors" ADD "city_id" integer /*application='AfrikDoc'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_doctors_on_city_id" ON "doctors" ("city_id") /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='AfrikDoc'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adoctors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "specialty" varchar, "zip_code" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "city_id" integer) /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_adoctors_on_city_id" ON "adoctors" ("city_id") /*application='AfrikDoc'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "adoctors" ("id","first_name","last_name","specialty","zip_code","created_at","updated_at","city_id")
+                     SELECT "id","first_name","last_name","specialty","zip_code","created_at","updated_at","city_id" FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "doctors" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "specialty" varchar, "zip_code" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "city_id" integer, CONSTRAINT "fk_rails_7d07bf1fcc"
+FOREIGN KEY ("city_id")
+  REFERENCES "cities" ("id")
+) /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_doctors_on_city_id" ON "doctors" ("city_id") /*application='AfrikDoc'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "doctors" ("id","first_name","last_name","specialty","zip_code","created_at","updated_at","city_id")
+                     SELECT "id","first_name","last_name","specialty","zip_code","created_at","updated_at","city_id" FROM "adoctors" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "adoctors" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260430213326') RETURNING "version" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+Migrating to AddCityToPatients (20260430213337)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "apatients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='AfrikDoc'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "apatients" ("id","first_name","last_name","created_at","updated_at")
+                     SELECT "id","first_name","last_name","created_at","updated_at" FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "patients" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "patients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "city_id" integer NOT NULL) /*application='AfrikDoc'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "patients" ("id","first_name","last_name","created_at","updated_at")
+                     SELECT "id","first_name","last_name","created_at","updated_at" FROM "apatients" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+Migrating to AddCityToPatients (20260430213337)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "patients" ADD "city_id" integer /*application='AfrikDoc'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_patients_on_city_id" ON "patients" ("city_id") /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='AfrikDoc'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "apatients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "city_id" integer) /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_apatients_on_city_id" ON "apatients" ("city_id") /*application='AfrikDoc'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "apatients" ("id","first_name","last_name","created_at","updated_at","city_id")
+                     SELECT "id","first_name","last_name","created_at","updated_at","city_id" FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "patients" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "patients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "city_id" integer, CONSTRAINT "fk_rails_5f4f0a6f13"
+FOREIGN KEY ("city_id")
+  REFERENCES "cities" ("id")
+) /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_patients_on_city_id" ON "patients" ("city_id") /*application='AfrikDoc'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "patients" ("id","first_name","last_name","created_at","updated_at","city_id")
+                     SELECT "id","first_name","last_name","created_at","updated_at","city_id" FROM "apatients" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "apatients" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260430213337') RETURNING "version" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+Migrating to AddCityToAppointments (20260430213426)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "appointments" ADD "city_id" integer /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_appointments_on_city_id" ON "appointments" ("city_id") /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='AfrikDoc'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aappointments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" datetime(6), "doctor_id" integer, "patient_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "city_id" integer) /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aappointments_on_city_id" ON "aappointments" ("city_id") /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aappointments_on_patient_id" ON "aappointments" ("patient_id") /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aappointments_on_doctor_id" ON "aappointments" ("doctor_id") /*application='AfrikDoc'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "aappointments" ("id","date","doctor_id","patient_id","created_at","updated_at","city_id")
+                     SELECT "id","date","doctor_id","patient_id","created_at","updated_at","city_id" FROM "appointments" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "appointments" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" datetime(6), "doctor_id" integer, "patient_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "city_id" integer, CONSTRAINT "fk_rails_fecccdeb72"
+FOREIGN KEY ("city_id")
+  REFERENCES "cities" ("id")
+) /*application='AfrikDoc'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_appointments_on_doctor_id" ON "appointments" ("doctor_id") /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_appointments_on_patient_id" ON "appointments" ("patient_id") /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_appointments_on_city_id" ON "appointments" ("city_id") /*application='AfrikDoc'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "appointments" ("id","date","doctor_id","patient_id","created_at","updated_at","city_id")
+                     SELECT "id","date","doctor_id","patient_id","created_at","updated_at","city_id" FROM "aappointments" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aappointments" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260430213426') RETURNING "version" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+Migrating to RemoveSpecialtyFromDoctors (20260430213723)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='AfrikDoc'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adoctors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "specialty" varchar, "zip_code" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "city_id" integer) /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_adoctors_on_city_id" ON "adoctors" ("city_id") /*application='AfrikDoc'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "adoctors" ("id","first_name","last_name","specialty","zip_code","created_at","updated_at","city_id")
+                     SELECT "id","first_name","last_name","specialty","zip_code","created_at","updated_at","city_id" FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "doctors" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "zip_code" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "city_id" integer, CONSTRAINT "fk_rails_7d07bf1fcc"
+FOREIGN KEY ("city_id")
+  REFERENCES "cities" ("id")
+) /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_doctors_on_city_id" ON "doctors" ("city_id") /*application='AfrikDoc'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "doctors" ("id","first_name","last_name","zip_code","created_at","updated_at","city_id")
+                     SELECT "id","first_name","last_name","zip_code","created_at","updated_at","city_id" FROM "adoctors" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "adoctors" /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='AfrikDoc'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260430213723') RETURNING "version" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+Migrating to CreateSpecialties (20260430213819)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "specialties" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260430213819') RETURNING "version" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+Migrating to CreateJoinTableDoctorSpecialties (20260430213918)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "join_table_doctor_specialties" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "doctor_id" integer NOT NULL, "specialty_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_56f9dab797"
+FOREIGN KEY ("doctor_id")
+  REFERENCES "doctors" ("id")
+, CONSTRAINT "fk_rails_219f41895e"
+FOREIGN KEY ("specialty_id")
+  REFERENCES "specialties" ("id")
+) /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_join_table_doctor_specialties_on_doctor_id" ON "join_table_doctor_specialties" ("doctor_id") /*application='AfrikDoc'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_join_table_doctor_specialties_on_specialty_id" ON "join_table_doctor_specialties" ("specialty_id") /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260430213918') RETURNING "version" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Load (0.7ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Destroy (3.2ms)[0m  [1m[31mDELETE FROM "doctors" WHERE "doctors"."id" = 1 /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT "patients".* FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Destroy (2.6ms)[0m  [1m[31mDELETE FROM "patients" WHERE "patients"."id" = 1 /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Destroy (2.2ms)[0m  [1m[31mDELETE FROM "appointments" WHERE "appointments"."id" = 1 /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mSpecialty Load (0.1ms)[0m  [1m[34mSELECT "specialties".* FROM "specialties" /*application='AfrikDoc'*/[0m
+  [1m[36mJoinTableDoctorSpecialty Load (0.1ms)[0m  [1m[34mSELECT "join_table_doctor_specialties".* FROM "join_table_doctor_specialties" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Create (2.2ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES ('Lake Gianna', '2026-04-30 23:00:54.927877', '2026-04-30 23:00:54.927877') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Create (16.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES ('Hageneshaven', '2026-04-30 23:00:54.935112', '2026-04-30 23:00:54.935112') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Create (1.7ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES ('Russelbury', '2026-04-30 23:00:54.955223', '2026-04-30 23:00:54.955223') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Create (1.8ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES ('Luciushaven', '2026-04-30 23:00:54.961041', '2026-04-30 23:00:54.961041') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Create (1.9ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES ('Alechaven', '2026-04-30 23:00:54.966985', '2026-04-30 23:00:54.966985') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mSpecialty Create (1.7ms)[0m  [1m[32mINSERT INTO "specialties" ("name", "created_at", "updated_at") VALUES ('Cardiologue', '2026-04-30 23:00:54.975915', '2026-04-30 23:00:54.975915') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mSpecialty Create (1.5ms)[0m  [1m[32mINSERT INTO "specialties" ("name", "created_at", "updated_at") VALUES ('Généraliste', '2026-04-30 23:00:54.980109', '2026-04-30 23:00:54.980109') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mSpecialty Create (1.2ms)[0m  [1m[32mINSERT INTO "specialties" ("name", "created_at", "updated_at") VALUES ('Pédiatre', '2026-04-30 23:00:54.983919', '2026-04-30 23:00:54.983919') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mSpecialty Create (1.9ms)[0m  [1m[32mINSERT INTO "specialties" ("name", "created_at", "updated_at") VALUES ('Dentiste', '2026-04-30 23:00:54.989321', '2026-04-30 23:00:54.989321') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mSpecialty Create (1.7ms)[0m  [1m[32mINSERT INTO "specialties" ("name", "created_at", "updated_at") VALUES ('Orthopédiste', '2026-04-30 23:00:54.994460', '2026-04-30 23:00:54.994460') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Create (1.8ms)[0m  [1m[32mINSERT INTO "doctors" ("first_name", "last_name", "zip_code", "created_at", "updated_at", "city_id") VALUES ('Shayne', 'Harris', '19109-2366', '2026-04-30 23:00:55.006271', '2026-04-30 23:00:55.006271', 3) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mSpecialty Load (0.1ms)[0m  [1m[34mSELECT "specialties".* FROM "specialties" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mJoinTableDoctorSpecialty Create (1.3ms)[0m  [1m[32mINSERT INTO "join_table_doctor_specialties" ("doctor_id", "specialty_id", "created_at", "updated_at") VALUES (2, 2, '2026-04-30 23:00:55.018129', '2026-04-30 23:00:55.018129') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Create (1.1ms)[0m  [1m[32mINSERT INTO "doctors" ("first_name", "last_name", "zip_code", "created_at", "updated_at", "city_id") VALUES ('Rhoda', 'Kuvalis', '30316', '2026-04-30 23:00:55.023148', '2026-04-30 23:00:55.023148', 2) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mSpecialty Load (0.1ms)[0m  [1m[34mSELECT "specialties".* FROM "specialties" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mJoinTableDoctorSpecialty Create (1.0ms)[0m  [1m[32mINSERT INTO "join_table_doctor_specialties" ("doctor_id", "specialty_id", "created_at", "updated_at") VALUES (3, 3, '2026-04-30 23:00:55.027093', '2026-04-30 23:00:55.027093') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Create (2.0ms)[0m  [1m[32mINSERT INTO "doctors" ("first_name", "last_name", "zip_code", "created_at", "updated_at", "city_id") VALUES ('Shannon', 'Toy', '17180-5726', '2026-04-30 23:00:55.031274', '2026-04-30 23:00:55.031274', 3) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mSpecialty Load (0.1ms)[0m  [1m[34mSELECT "specialties".* FROM "specialties" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mJoinTableDoctorSpecialty Create (1.1ms)[0m  [1m[32mINSERT INTO "join_table_doctor_specialties" ("doctor_id", "specialty_id", "created_at", "updated_at") VALUES (4, 4, '2026-04-30 23:00:55.036753', '2026-04-30 23:00:55.036753') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Create (1.1ms)[0m  [1m[32mINSERT INTO "doctors" ("first_name", "last_name", "zip_code", "created_at", "updated_at", "city_id") VALUES ('Kristopher', 'Corwin', '10560-3920', '2026-04-30 23:00:55.041037', '2026-04-30 23:00:55.041037', 5) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mSpecialty Load (0.1ms)[0m  [1m[34mSELECT "specialties".* FROM "specialties" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mJoinTableDoctorSpecialty Create (1.8ms)[0m  [1m[32mINSERT INTO "join_table_doctor_specialties" ("doctor_id", "specialty_id", "created_at", "updated_at") VALUES (5, 2, '2026-04-30 23:00:55.045530', '2026-04-30 23:00:55.045530') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Create (1.3ms)[0m  [1m[32mINSERT INTO "doctors" ("first_name", "last_name", "zip_code", "created_at", "updated_at", "city_id") VALUES ('Andres', 'Koch', '81116', '2026-04-30 23:00:55.052655', '2026-04-30 23:00:55.052655', 3) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mSpecialty Load (0.1ms)[0m  [1m[34mSELECT "specialties".* FROM "specialties" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mJoinTableDoctorSpecialty Create (1.9ms)[0m  [1m[32mINSERT INTO "join_table_doctor_specialties" ("doctor_id", "specialty_id", "created_at", "updated_at") VALUES (6, 5, '2026-04-30 23:00:55.059369', '2026-04-30 23:00:55.059369') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Create (2.1ms)[0m  [1m[32mINSERT INTO "doctors" ("first_name", "last_name", "zip_code", "created_at", "updated_at", "city_id") VALUES ('Tamera', 'Mohr', '83922-4141', '2026-04-30 23:00:55.067325', '2026-04-30 23:00:55.067325', 2) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mSpecialty Load (0.1ms)[0m  [1m[34mSELECT "specialties".* FROM "specialties" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mJoinTableDoctorSpecialty Create (2.0ms)[0m  [1m[32mINSERT INTO "join_table_doctor_specialties" ("doctor_id", "specialty_id", "created_at", "updated_at") VALUES (7, 1, '2026-04-30 23:00:55.075140', '2026-04-30 23:00:55.075140') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Create (2.2ms)[0m  [1m[32mINSERT INTO "doctors" ("first_name", "last_name", "zip_code", "created_at", "updated_at", "city_id") VALUES ('Leanna', 'Buckridge', '34876', '2026-04-30 23:00:55.083205', '2026-04-30 23:00:55.083205', 3) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mSpecialty Load (0.1ms)[0m  [1m[34mSELECT "specialties".* FROM "specialties" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mJoinTableDoctorSpecialty Create (1.2ms)[0m  [1m[32mINSERT INTO "join_table_doctor_specialties" ("doctor_id", "specialty_id", "created_at", "updated_at") VALUES (8, 4, '2026-04-30 23:00:55.091043', '2026-04-30 23:00:55.091043') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Create (1.3ms)[0m  [1m[32mINSERT INTO "doctors" ("first_name", "last_name", "zip_code", "created_at", "updated_at", "city_id") VALUES ('Liberty', 'Corwin', '79944-9365', '2026-04-30 23:00:55.095967', '2026-04-30 23:00:55.095967', 3) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mSpecialty Load (0.1ms)[0m  [1m[34mSELECT "specialties".* FROM "specialties" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mJoinTableDoctorSpecialty Create (1.2ms)[0m  [1m[32mINSERT INTO "join_table_doctor_specialties" ("doctor_id", "specialty_id", "created_at", "updated_at") VALUES (9, 5, '2026-04-30 23:00:55.101501', '2026-04-30 23:00:55.101501') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Create (1.4ms)[0m  [1m[32mINSERT INTO "doctors" ("first_name", "last_name", "zip_code", "created_at", "updated_at", "city_id") VALUES ('Monty', 'Kuphal', '56255-7449', '2026-04-30 23:00:55.107131', '2026-04-30 23:00:55.107131', 4) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mSpecialty Load (0.1ms)[0m  [1m[34mSELECT "specialties".* FROM "specialties" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mJoinTableDoctorSpecialty Create (2.0ms)[0m  [1m[32mINSERT INTO "join_table_doctor_specialties" ("doctor_id", "specialty_id", "created_at", "updated_at") VALUES (10, 2, '2026-04-30 23:00:55.112433', '2026-04-30 23:00:55.112433') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Create (1.7ms)[0m  [1m[32mINSERT INTO "doctors" ("first_name", "last_name", "zip_code", "created_at", "updated_at", "city_id") VALUES ('Cathie', 'Hills', '23524', '2026-04-30 23:00:55.119636', '2026-04-30 23:00:55.119636', 1) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mSpecialty Load (0.1ms)[0m  [1m[34mSELECT "specialties".* FROM "specialties" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mJoinTableDoctorSpecialty Create (1.9ms)[0m  [1m[32mINSERT INTO "join_table_doctor_specialties" ("doctor_id", "specialty_id", "created_at", "updated_at") VALUES (11, 4, '2026-04-30 23:00:55.126607', '2026-04-30 23:00:55.126607') RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (1.4ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Claud', 'Weber', '2026-04-30 23:00:55.133076', '2026-04-30 23:00:55.133076', 1) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (2.1ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Damaris', 'Donnelly', '2026-04-30 23:00:55.138650', '2026-04-30 23:00:55.138650', 3) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (1.7ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Karmen', 'Halvorson', '2026-04-30 23:00:55.146328', '2026-04-30 23:00:55.146328', 5) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (2.0ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Galina', 'Rosenbaum', '2026-04-30 23:00:55.153928', '2026-04-30 23:00:55.153928', 4) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (1.7ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Thuy', 'Hansen', '2026-04-30 23:00:55.161053', '2026-04-30 23:00:55.161053', 5) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (2.0ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Erich', 'Williamson', '2026-04-30 23:00:55.168020', '2026-04-30 23:00:55.168020', 4) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (1.8ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Delila', 'Lebsack', '2026-04-30 23:00:55.175843', '2026-04-30 23:00:55.175843', 1) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (1.9ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Keneth', 'Harvey', '2026-04-30 23:00:55.183251', '2026-04-30 23:00:55.183251', 5) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (1.3ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Mickie', 'Kreiger', '2026-04-30 23:00:55.189163', '2026-04-30 23:00:55.189163', 1) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (1.5ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Rodger', 'Schneider', '2026-04-30 23:00:55.194481', '2026-04-30 23:00:55.194481', 4) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (1.4ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Bryon', 'DuBuque', '2026-04-30 23:00:55.200643', '2026-04-30 23:00:55.200643', 5) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (2.0ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Thalia', 'Gutmann', '2026-04-30 23:00:55.206383', '2026-04-30 23:00:55.206383', 1) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (1.5ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Alonso', 'Mitchell', '2026-04-30 23:00:55.212709', '2026-04-30 23:00:55.212709', 4) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.9ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (1.5ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Mikel', 'Feest', '2026-04-30 23:00:55.229124', '2026-04-30 23:00:55.229124', 5) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (1.4ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Maryann', 'Jacobi', '2026-04-30 23:00:55.234910', '2026-04-30 23:00:55.234910', 4) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (1.3ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Milo', 'Ledner', '2026-04-30 23:00:55.240042', '2026-04-30 23:00:55.240042', 4) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (2.0ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Marla', 'Durgan', '2026-04-30 23:00:55.245409', '2026-04-30 23:00:55.245409', 5) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (1.2ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Mariana', 'Fritsch', '2026-04-30 23:00:55.252370', '2026-04-30 23:00:55.252370', 2) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (1.4ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Reid', 'Hirthe', '2026-04-30 23:00:55.257456', '2026-04-30 23:00:55.257456', 4) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Create (2.1ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "last_name", "created_at", "updated_at", "city_id") VALUES ('Guillermo', 'Goodwin', '2026-04-30 23:00:55.263872', '2026-04-30 23:00:55.263872', 2) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT "patients".* FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Create (1.8ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "doctor_id", "patient_id", "created_at", "updated_at", "city_id") VALUES ('2026-05-08 10:02:48.348870', 3, 11, '2026-04-30 23:00:55.276827', '2026-04-30 23:00:55.276827', 4) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Load (1.1ms)[0m  [1m[34mSELECT "patients".* FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Create (2.0ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "doctor_id", "patient_id", "created_at", "updated_at", "city_id") VALUES ('2026-05-16 02:29:43.007976', 8, 9, '2026-04-30 23:00:55.297322', '2026-04-30 23:00:55.297322', 4) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT "patients".* FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Create (1.5ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "doctor_id", "patient_id", "created_at", "updated_at", "city_id") VALUES ('2026-05-25 14:00:30.101960', 5, 18, '2026-04-30 23:00:55.307308', '2026-04-30 23:00:55.307308', 3) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Create (1.9ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "doctor_id", "patient_id", "created_at", "updated_at", "city_id") VALUES ('2026-05-21 16:23:49.456143', 11, 8, '2026-04-30 23:00:55.317235', '2026-04-30 23:00:55.317235', 5) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT "patients".* FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Create (2.0ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "doctor_id", "patient_id", "created_at", "updated_at", "city_id") VALUES ('2026-05-21 09:12:33.599654', 9, 20, '2026-04-30 23:00:55.328741', '2026-04-30 23:00:55.328741', 5) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Create (1.7ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "doctor_id", "patient_id", "created_at", "updated_at", "city_id") VALUES ('2026-05-21 01:37:09.814965', 2, 10, '2026-04-30 23:00:55.340290', '2026-04-30 23:00:55.340290', 3) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT "patients".* FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Create (1.4ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "doctor_id", "patient_id", "created_at", "updated_at", "city_id") VALUES ('2026-05-15 17:25:56.929543', 5, 10, '2026-04-30 23:00:55.349624', '2026-04-30 23:00:55.349624', 2) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT "patients".* FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Create (1.6ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "doctor_id", "patient_id", "created_at", "updated_at", "city_id") VALUES ('2026-05-15 22:40:35.003908', 2, 7, '2026-04-30 23:00:55.359526', '2026-04-30 23:00:55.359526', 2) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Create (1.9ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "doctor_id", "patient_id", "created_at", "updated_at", "city_id") VALUES ('2026-05-05 21:14:06.232682', 11, 13, '2026-04-30 23:00:55.369724', '2026-04-30 23:00:55.369724', 3) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Create (2.1ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "doctor_id", "patient_id", "created_at", "updated_at", "city_id") VALUES ('2026-05-01 17:55:03.822666', 3, 11, '2026-04-30 23:00:55.380339', '2026-04-30 23:00:55.380339', 5) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Create (5.5ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "doctor_id", "patient_id", "created_at", "updated_at", "city_id") VALUES ('2026-05-30 09:12:19.085716', 3, 2, '2026-04-30 23:00:55.394204', '2026-04-30 23:00:55.394204', 2) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Create (1.2ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "doctor_id", "patient_id", "created_at", "updated_at", "city_id") VALUES ('2026-05-22 01:23:42.042057', 3, 16, '2026-04-30 23:00:55.463897', '2026-04-30 23:00:55.463897', 1) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT "patients".* FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Create (1.8ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "doctor_id", "patient_id", "created_at", "updated_at", "city_id") VALUES ('2026-05-29 17:11:27.008964', 9, 5, '2026-04-30 23:00:55.471059', '2026-04-30 23:00:55.471059', 3) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT "patients".* FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Create (2.2ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "doctor_id", "patient_id", "created_at", "updated_at", "city_id") VALUES ('2026-05-18 06:44:40.100592', 4, 9, '2026-04-30 23:00:55.478000', '2026-04-30 23:00:55.478000', 1) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT "patients".* FROM "patients" /*application='AfrikDoc'*/[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mAppointment Create (1.2ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "doctor_id", "patient_id", "created_at", "updated_at", "city_id") VALUES ('2026-05-29 08:40:02.134891', 4, 5, '2026-04-30 23:00:55.485342', '2026-04-30 23:00:55.485342', 3) RETURNING "id" /*application='AfrikDoc'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Count (5.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "doctors" /*application='AfrikDoc'*/[0m
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" ORDER BY "doctors"."id" ASC LIMIT 1 /*application='AfrikDoc'*/[0m
